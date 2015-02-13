@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Customer ID="100">
+<customer-name id="100">
     <full-name>mkyong</full-name>
-    <shipping-address TYPE="tipo1">
+    <shipping-address address-type="tipo1">
         <street>road</street>
     </shipping-address>
-</Customer>
+</customer-name>

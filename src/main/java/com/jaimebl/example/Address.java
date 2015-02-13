@@ -7,25 +7,25 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Address {
 
-    public String getType() {
-        return type;
+    public String getAddressType() {
+        return _addressType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setAddressType(String addressType) {
+        this._addressType = addressType;
     }
 
     public String getStreet() {
-        return street;
+        return _street;
     }
 
     public void setStreet(String street) {
-        this.street = street;
+        this._street = street;
     }
 
     @XmlAttribute
-    private String type;
+    private String _addressType;
 
-    private String street;
+    private String _street;
 
 }

@@ -26,27 +26,27 @@ public class ExampleTest extends AbstractTestNGSpringContextTests {
 
     //OBJ TO XML
     public void marshal(){
-        Customer customer = new Customer();
-        customer.setId(100);
-        customer.setFullName("mkyong");
+        CustomerName customerName = new CustomerName();
+        customerName.setId(100);
+        customerName.setFullName("mkyong");
 
         Address address = new Address();
         address.setStreet("road");
-        address.setType("tipo1");
+        address.setAddressType("tipo1");
 
-        customer.setShippingAddress(address);
+        customerName.setShippingAddress(address);
 
         try {
             //Explicitly creating moxy JAXBContext rather than jaxb.properties approach
             //JAXBContext jaxbContext = JAXBContextFactory.createContext(new Class[]{Customer.class}, null);
-            JAXBContext jaxbContext = JAXBContext.newInstance(Customer.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(CustomerName.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
             // output pretty printed
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
             //jaxbMarshaller.marshal(customer, file);
-            jaxbMarshaller.marshal(customer, System.out);
+            jaxbMarshaller.marshal(customerName, System.out);
 
         } catch (JAXBException e) {
             e.printStackTrace();
@@ -60,7 +60,7 @@ public class ExampleTest extends AbstractTestNGSpringContextTests {
             Resource resource = _appContext.getResource("classpath:input/file.xml");
 
             File file = resource.getFile();
-            JAXBContext jaxbContext = JAXBContext.newInstance(Customer.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(CustomerName.class);
 
             Unmarshaller jaxbUnmarshaller = null;
             try {
@@ -68,8 +68,8 @@ public class ExampleTest extends AbstractTestNGSpringContextTests {
             } catch (JAXBException e) {
                 e.printStackTrace();
             }
-            Customer customer = (Customer) jaxbUnmarshaller.unmarshal(file);
-            System.out.println(customer);
+            CustomerName customerName = (CustomerName) jaxbUnmarshaller.unmarshal(file);
+            System.out.println(customerName);
 
         } catch (JAXBException e) {
             e.printStackTrace();

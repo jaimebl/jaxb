@@ -6,40 +6,39 @@ import javax.xml.bind.annotation.*;
  * Created by Jaime on 12/02/2015.
  */
 @XmlRootElement
-@XmlType(propOrder={"fullName", "shippingAddress"})
+@XmlType(propOrder={"_fullName", "_shippingAddress"})
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Customer {
+public class CustomerName {
 
     @XmlAttribute
-    private long id;
+    private long _id;
 
-    private String fullName;
+    private String _fullName;
 
-
-    private Address shippingAddress;
+    private Address _shippingAddress;
 
     public Address getShippingAddress() {
-        return shippingAddress;
+        return _shippingAddress;
     }
 
     public void setShippingAddress(Address shippingAddress) {
-        this.shippingAddress = shippingAddress;
+        this._shippingAddress = shippingAddress;
     }
 
     public String getFullName() {
-        return fullName;
+        return _fullName;
     }
 
     public void setFullName(String fullName) {
-        this.fullName = fullName;
+        this._fullName = fullName;
     }
 
     public long getId() {
-        return id;
+        return _id;
     }
 
     public void setId(long id) {
-        this.id = id;
+        this._id = id;
     }
 
 
